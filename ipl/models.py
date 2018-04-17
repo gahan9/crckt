@@ -20,7 +20,7 @@ class Player(models.Model):
 
 class IPLProfile(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
-    set_no = models.SmallIntegerField()
-    set = models.CharField(max_length=10)
+    set_no = models.SmallIntegerField(blank=True, null=True)
+    current_set = models.CharField(max_length=10, blank=True, null=True)
     matches = models.IntegerField(_("Matches Played"), blank=True, null=True)
     price = models.IntegerField(_("Reserve Price Rs Lakh"), blank=True, null=True)
